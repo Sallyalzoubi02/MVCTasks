@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+    // Dynamically loading rooms (NO CONTROLLER)
+    var rooms = new[] {
+        new { Name = "Apartment with Amazing Park View", Price = 45.00, ImageUrl = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/531010453.jpg?k=1bcebae578393825607630efc8c5dee12d34462daf26ca2c821e66b343e67079&o=&hp=1" },
+        new { Name = "Double Deluxe Room - Double Bed", Price = 35.00, ImageUrl = "https://webbox.imgix.net/images/tgvirijswhqazimw/15f2acc4-6011-42ed-9306-a55780d38ef8.jpeg?auto=format,compress&fit=crop&crop=entropy" },
+        new { Name = "Luxury Apartment - Ground Floor", Price = 40.00, ImageUrl = "https://th.bing.com/th/id/OIP.eo0PKhM_nazmGGqhwVn_iwHaFj?rs=1&pid=ImgDetMain" }
+    };
+}
+@foreach (var room in rooms)
+{
+    <div class="col-md-4">
+        <div class="card">
+            <img src="@room.ImageUrl" class="card-img-top" alt="@room.Name">
+            <div class="card-body text-center">
+                <h5 class="card-title">@room.Name</h5>
+                <p class="text-danger fw-bold">$@room.Price</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+}
