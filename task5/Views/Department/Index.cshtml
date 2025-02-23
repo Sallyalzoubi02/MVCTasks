@@ -1,0 +1,28 @@
+﻿@model List<task5.Models.Department>
+
+
+<h2>Departments</h2>
+
+<a class="btn btn-primary" asp-area="" asp-controller="Department" asp-action="Create">Add new Department</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Manager</th>
+            <th>established date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.Name</td>
+                <td>@department.Location</td>
+                <td>@department.ManagerId</td>
+                <td>@department.EstablishedDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
