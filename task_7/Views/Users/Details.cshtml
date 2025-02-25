@@ -1,0 +1,25 @@
+﻿@model task_7.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <form asp-action="Details" method="post">
+        <label>Email:</label>
+        <input type="email" name="email" required />
+        <br />
+
+        <label>Password:</label>
+        <input type="password" name="password" required />
+        <br />
+
+		<button type="submit" asp-route-id="@Model?.Email , @Model?.Password">Login</button>
+    </form>
+
+</div>
+
